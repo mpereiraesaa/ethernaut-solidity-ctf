@@ -1,0 +1,6 @@
+[profile.default]
+src = "answers"
+evm_version = 'shanghai'
+
+[profile.dependencies]
+forge-std = { git = "https://github.com/foundry-rs/forge-std.git" }
