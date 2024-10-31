@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "../../libs/forge-std/src/console.sol";
 import "./CoinFlip.sol";
 
 contract MySolution {
@@ -12,19 +11,12 @@ contract MySolution {
         uint256 blockValue = uint256(blockhash(block.number - 1));
         uint256 coinFlip = blockValue / FACTOR;
 
-        uint256 wins = myContract.consecutiveWins();
-
-        console.log("Current wins are: ", wins);
+        myContract.consecutiveWins();
 
         if (coinFlip == 1) {
-            bool res = myContract.flip(true);
-            console.log("Response was: ", res);
+            myContract.flip(true);
         } else {
-            bool res = myContract.flip(false);
-            console.log("Response was: ", res);
+            myContract.flip(false);
         }
-
-        uint256 wins2 = myContract.consecutiveWins();
-        console.log("Updated wins are: ", wins2);
     }
 }
